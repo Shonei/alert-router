@@ -11,5 +11,5 @@ steps:
       - run
       - --filename=[KUBERNETES_CONFIG_FILE]
       - --image=gcr.io/[PROJECT_ID]/[IMAGE]:[TAG]
-      - --location=[LOCATION]
-      - --cluster=[CLUSTER]
+      - --location=europe-west1-c
+      - --cluster=alert-router

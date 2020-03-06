@@ -1,0 +1,10 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alert-router
+spec:
+  replicas: 1
+    spec:
+      containers:
+        - name: alert-router
+          image: nginx:1.7.9
