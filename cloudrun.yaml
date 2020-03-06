@@ -10,6 +10,6 @@ steps:
     args:
       - run
       - --filename=./manifests
-      - --image=gcr.io/[PROJECT_ID]/[IMAGE]:[TAG]
+      - --image=gcr.io/kubernetes-246518/github.com/shonei/alert-router:02c7173
       - --location=europe-west1-c
       - --cluster=alert-router
