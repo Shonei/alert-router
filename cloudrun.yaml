@@ -9,7 +9,7 @@ steps:
   - name: "gcr.io/cloud-builders/gke-deploy"
     args:
       - run
-      - --filename=[KUBERNETES_CONFIG_FILE]
+      - --filename=./manifests
       - --image=gcr.io/[PROJECT_ID]/[IMAGE]:[TAG]
       - --location=europe-west1-c
       - --cluster=alert-router
