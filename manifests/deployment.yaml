@@ -4,6 +4,13 @@ metadata:
   name: alert-router
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: alert-router
+  template:
+    metadata:
+      labels:
+        app: alert-router
     spec:
       containers:
         - name: alert-router
