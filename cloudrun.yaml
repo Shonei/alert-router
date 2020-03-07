@@ -1,16 +1,5 @@
 steps:
-  # build the container image
-  - name: "gcr.io/cloud-builders/docker"
-    args: ["build", "-t", "gcr.io/$PROJECT_ID/$REPO_NAME:$SHORT_SHA", "."]
-    # push container image
-  - name: "gcr.io/cloud-builders/docker"
-    args: ["push", "gcr.io/$PROJECT_ID/$REPO_NAME:$SHORT_SHA"]
-
-    # deploy container image to GKE
-  - name: "gcr.io/cloud-builders/gke-deploy"
-    args:
-      - run
-      - --filename=./manifests
-      - --image=gcr.io/$PROJECT_ID/$REPO_NAME:$SHORT_SHA
-      - --location=europe-west1-c
-      - --cluster=alert-router
+  # Build the module.
+  - name: mirror.gcr.io/library/golang
+    env: ["GO111MODULE=on"]
+    args: ["go", "build", "./..."]
